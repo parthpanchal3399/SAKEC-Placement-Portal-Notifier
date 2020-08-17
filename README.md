@@ -1,6 +1,6 @@
 # SAKEC-Placement-Portal-Notifier
 A very untidy script that montitors the SAKEC Placement Portal for new updates and notifies via email if any update.
-Uses PHP Simple HTML DOM Parser(https://simplehtmldom.sourceforge.io/)
+Uses PHP [Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/)
 
 # Steps to Deploy
 1. Clone the directory to your local machine
