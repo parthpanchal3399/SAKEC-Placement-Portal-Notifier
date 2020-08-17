@@ -1,4 +1,5 @@
 <?php
+  include "simple_html_dom.php";
   $curr_id = 0;   //ID from site
   $prev_id = 0;   //ID from db
   $servername = "localhost";
@@ -24,7 +25,6 @@
 
   $to = 'emailto1@gmail.com, emailto2@gmail.com'; //Recipient Email Addresses separated by comma
   $subject = 'New Message Posted';
-  $msg = 'Check Placement Portal';
   $headers = "From: PP Placement Notification <ppp@test.com>\r\n";
 
   $data = array(
@@ -42,12 +42,16 @@
   $result = curl_exec($ch);
   curl_close($ch);
 
+  $html = new simple_html_dom();
+  $html->load($result);
+
   $result = substr($result, strpos($result, 'id=')+5);
   $result = substr($result, strpos($result, 'id='));
   $curr_id = (int)substr($result, strpos($result, 'id=')+4, 4);
 
   //Checking for update
   if ($curr_id > $prev_id) {
+      $msg = $html->getElementById($curr_id)->plaintext;
       $prev_id = $curr_id;
       $sql = "UPDATE IDS SET curr_id=".$prev_id;
       if (mysqli_query($conn, $sql)) {
