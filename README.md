@@ -1,6 +1,6 @@
 # SAKEC-Placement-Portal-Notifier
 A very untidy script that montitors the SAKEC Placement Portal for new updates and notifies via email if any update.
-
+Uses PHP Simple HTML DOM Parser(https://simplehtmldom.sourceforge.io/)
 
 # Steps to Deploy
 1. Clone the directory to your local machine
@@ -11,5 +11,5 @@ A very untidy script that montitors the SAKEC Placement Portal for new updates a
 6. You are now all set. Note that there's a limit on number of mails you can send daily (50 per day) for a free account on 000webhost
 
 # To-Do
-~~1. Making the mail content dynamic.~~
+~~1. Making the mail content dynamic.~~ <br>
 2. Better way to send emails in bulk (avoiding the 50emails/day limit)
