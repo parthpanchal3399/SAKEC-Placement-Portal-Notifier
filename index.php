@@ -26,6 +26,7 @@
   $to = 'emailto1@gmail.com, emailto2@gmail.com'; //Recipient Email Addresses separated by comma
   $subject = 'New Message Posted';
   $headers = "From: PP Placement Notification <ppp@test.com>\r\n";
+  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
 
   $data = array(
       "reg_id" => "", //SAKEC Placement Portal Reg.No
@@ -51,7 +52,9 @@
 
   //Checking for update
   if ($curr_id > $prev_id) {
-      $msg = $html->getElementById($curr_id)->plaintext;
+      $msg = "Hello Friend, <br>There's a new message posted on Placement Portal: <br>";
+      $msg = $msg.$html->getElementById($curr_id)->plaintext;
+      $msg = $msg."<br><br><a href='http://shahandanchor.com/placement/welcome.php'>Click Here</a> for more details<br>Thanks!";
       $prev_id = $curr_id;
       $sql = "UPDATE IDS SET curr_id=".$prev_id;
       if (mysqli_query($conn, $sql)) {
