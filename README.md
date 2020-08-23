@@ -8,7 +8,7 @@ Uses PHP [Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/) and [PH
 3. Create a database (on 000webhost) and create a Table 'IDS' with one column 'curr_id' (Integer)
 4. Add the index.php file to your site and edit all the credentials (Database, SAKEC Placemment Portal, 'your-email@email.com', its password and recipients list)
 5. Goto your-email@email.com's security setting page and “Allow less secure apps”.
-6. Goto this [link] (https://www.google.com/accounts/DisplayUnlockCaptcha) and hit continue.
+6. Goto this [link](https://www.google.com/accounts/DisplayUnlockCaptcha) and hit continue.
 7. Run index.php
 8. Create an account on cron-job.org and setup a cronjob that hits the website every 10 min.
 9. You are now all set. Note that you can use $mail->SMTPDebug=1 to debug the mail functionality
